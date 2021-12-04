@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./Movie.module.css";
 
-function Movie({id, coverImg, title, summary, genres}) {
+function Movie({id, coverImg, title, summary, genres, year}) {
     return (
         <div className = {styles.movie}>
             <img src = {coverImg} alt = {title} />
@@ -11,9 +11,10 @@ function Movie({id, coverImg, title, summary, genres}) {
             </h2>
             <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
             <ul>
+                {year}
                 {genres.map((g) => 
                     <li key={g}>{g}</li>
-                )}
+                )}                
             </ul>
         </div>
     );
